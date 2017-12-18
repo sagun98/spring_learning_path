@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.SpringVersion;
 
+// Library for linking xml bean and the main class
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 @SpringBootApplication
 public class HelloWorldApplication {
