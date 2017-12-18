@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.SpringVersion;
 
+import ch.qos.logback.core.net.SyslogOutputStream;
+
+// Library for linking xml bean and the main class
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 @SpringBootApplication
 public class HelloWorldApplication {
@@ -17,8 +20,11 @@ public class HelloWorldApplication {
 		Person p =new Person();
 		p.setFirstName("John");
 		p.setLastName("Doe");
+		p.setGender("others");
 		System.out.println(p.getName());
+		System.out.println(p.getGender());
 		
+		System.out.println("\n");
 		
 		//Setting up a bean for Inversion of Control
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
@@ -26,6 +32,7 @@ public class HelloWorldApplication {
 		p2.setFirstName("sagun");
 		p2.setLastName("Maharjan");
 		System.out.println(p2.getName());
+		System.out.println(p2.getGender());
 		context.close();
 		
 	}
