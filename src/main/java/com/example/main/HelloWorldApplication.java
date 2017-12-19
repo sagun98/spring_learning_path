@@ -33,7 +33,13 @@ public class HelloWorldApplication {
 		p2.setLastName("Maharjan");
 		System.out.println(p2.getName());
 		System.out.println(p2.getGender());
-		context.close();
+		
+		/*Creates memory leak issues using context.close
+		which closes all the beans */
+		//context.close();
+		
+		//Shuts down hook using JVM
+		context.registerShutdownHook();
 		
 	}
 }
