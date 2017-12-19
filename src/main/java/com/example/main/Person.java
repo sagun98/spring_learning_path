@@ -4,6 +4,7 @@ public class Person {
 	private String firstName;
 	private String lastName;
 	private String gender;
+	private Address address;
 	
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
@@ -31,5 +32,15 @@ public class Person {
 
 	public void destroy() {
 		System.out.println("destroy called\n");
+	}
+	
+	
+	//Setters and getters for address class
+	public void setAddress(Address a) {
+		this.address = a; 
+	}
+	
+	public Address getAddress() {
+		return this.address;
 	}
 }

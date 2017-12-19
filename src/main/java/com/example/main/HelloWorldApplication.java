@@ -41,5 +41,17 @@ public class HelloWorldApplication {
 		//Shuts down hook using JVM
 		context.registerShutdownHook();
 		
+		//Using Dependent classes (Class Person -> Class Address)
+		
+		Address a = new Address();
+		a.setStreet("402 FIlhiol ave");
+		a.setCityState("Monroe, LA");
+		System.out.println(a.toString());
+		
+		//Injecting a class
+		System.out.println("\n Using address injection\n");
+		p2.setAddress(a);
+		System.out.println(p2.getAddress()+"\n");
+		
 	}
 }

@@ -7,5 +7,10 @@
 	<property name="gender" value="Male"/>
 </bean>
 
+<bean id="address" class="com.example.main.Address">
+	<property name = "street" value="123 Filhiol Ave"/>
+	<property name = "cityState" value="MA"/>
+</bean>
+
 
 </beans>
