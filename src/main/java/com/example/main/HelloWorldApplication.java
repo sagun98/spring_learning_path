@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.core.SpringVersion;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 
 // Library for linking xml bean and the main class
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -42,15 +41,15 @@ public class HelloWorldApplication {
 		context.registerShutdownHook();
 		
 		//Using Dependent classes (Class Person -> Class Address)
-		
 		Address a = new Address();
 		a.setStreet("402 FIlhiol ave");
 		a.setCityState("Monroe, LA");
 		System.out.println(a.toString());
 		
 		//Injecting a class
-		System.out.println("\n Using address injection\n");
-		p2.setAddress(a);
+		System.out.println("\n\nUsing address injection\n");
+		Address a2 = (Address)context.getBean("address");
+		p2.setAddress(a2);
 		System.out.println(p2.getAddress()+"\n");
 		
 	}
